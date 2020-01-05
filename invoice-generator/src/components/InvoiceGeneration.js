@@ -21,24 +21,15 @@ export default class InvoiceGeneration extends React.Component {
     componentDidMount() {
 
         this.setState({
-            invoiceId:"GPC:2020-21/0001",
-            invoiceDate: " 02 Jan 2020",
-            patientName: "Mrs Arti Katare",
-            patientAge: "38yrs",
-            patientAddress: "Pride World City, Lohegaon,Pune ",
+            invoiceId:"GPC:2020-21/0002",
+            invoiceDate: " 05 Jan 2020",
+            patientName: "Miss Manyata Chaurasia",
+            patientAge: "4.5yrs (Female)",
+            patientAddress: "Skyways Sereno, Lohegaon,Pune ",
             procedureList: [
                 {
                     "name": "Consultation",
-                    "price": "300"
-                },
-                {
-                    "name": "Corn excission",
-                    "price": "1200"
-                },
-                
-                {
-                    "name": "Dressing (x5)",
-                    "price": "500"
+                    "price": "100"
                 }
             ]
         })
@@ -151,7 +142,7 @@ export default class InvoiceGeneration extends React.Component {
                             <thead>
                                 <tr>
                                     <th>Procedures </th>
-                                    <th>Pricing</th>
+                                    <th>Charges</th>
                                 </tr>
                             </thead>
                             <tbody>
