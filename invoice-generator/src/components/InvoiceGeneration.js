@@ -1,11 +1,13 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import SignatureCanvas from 'react-signature-canvas';
 import ReactToPdf from "react-to-pdf";
 import '../App.css';
+import Capture from './Capture.PNG';
 
 
 
@@ -20,18 +22,23 @@ export default class InvoiceGeneration extends React.Component {
 
         this.setState({
             invoiceId:"GPC:2020-21/0001",
-            invoiceDate: " 12/12/2020",
-            patientName: "Shivanshu Yadav",
-            patientAge: "35yrs",
-            patientAddress: "Pune ",
+            invoiceDate: " 02 Jan 2020",
+            patientName: "Mrs Arti Katare",
+            patientAge: "38yrs",
+            patientAddress: "Pride World City, Lohegaon,Pune ",
             procedureList: [
                 {
-                    "name": "stitching the internals",
-                    "price": "100"
+                    "name": "Consultation",
+                    "price": "300"
                 },
                 {
-                    "name": "stitching the externals",
-                    "price": "100"
+                    "name": "Corn excission",
+                    "price": "1200"
+                },
+                
+                {
+                    "name": "Dressing (x5)",
+                    "price": "500"
                 }
             ]
         })
@@ -68,6 +75,7 @@ export default class InvoiceGeneration extends React.Component {
 
     render() {
         let sigCanvas;
+        let bgImage = './Capture.PNG';
         const options = {
             orientation: 'portrait'
         };
@@ -90,10 +98,8 @@ export default class InvoiceGeneration extends React.Component {
 
                 <Row>
                     <Col >
-                        <div className="invoice-title">
-                            <h2 > <span style={{ color: "red" }}>GP Clinic  </span> </h2>
-                            <h6>Address: Shop#6 , L square building,Ground floor,Behind orchid hospital ,Porwal road, ,Lohegaon Pune,
-Maharashtra 411032</h6>
+                        <div className="invoice-title" >
+                        <Image src={Capture} style={{width:"100%"}} />
                         </div>
                     </Col>
 
@@ -165,14 +171,14 @@ Maharashtra 411032</h6>
 
 
                 <Row >
-                    <Col xs={7}  >
+                    <Col xs={5}  >
 
                     </Col>
                     <Col style={{ border: "1px solid black" }}>
 
                         <SignatureCanvas penColor='blue'
                             ref={(ref) => { sigCanvas = ref }}
-                            canvasProps={{ width: 100, height: 200, className: 'sigCanvas' }} />
+                            canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
                         <div> Dr. Supriya Desai-Bamane</div>
                     </Col>
                 </Row>
@@ -192,6 +198,14 @@ Maharashtra 411032</h6>
                     <h6 style={{textAlign:"center"}}> In Surgery, it’s not about the wand, it’s all about the magician!!</h6>
                     </Col>
                 </Row>
+                <Row>
+                    <Col>
+                    <span>Address: Shop#6 , L square building,Ground floor,Behind orchid hospital ,Porwal road, ,Lohegaon Pune,
+Maharashtra 411032</span>
+                    </Col>
+                </Row>
+
+                
                 </Col>
             </Row>
 
