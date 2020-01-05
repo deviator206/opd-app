@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
-  "workspaces": ["invoice-generator"]
-
+  "workspaces": ["invoice-generator"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deviator206/opd-app.git"
