@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import InvoiceGeneration from './components/InvoiceGeneration';
+import CreateInvoice from './components/CreateInvoice';
 import SendMRI from './components/SendMRI';
 
 
@@ -68,7 +68,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/invoice">
-            <InvoiceGeneration />
+            <CreateInvoice />
           </Route>
           <Route path="/mri">
             <SendMRI />

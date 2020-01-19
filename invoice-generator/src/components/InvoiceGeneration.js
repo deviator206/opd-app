@@ -19,19 +19,14 @@ export default class InvoiceGeneration extends React.Component {
         this.PageRef = React.createRef();
     }
     componentDidMount() {
-
+        const {newProcedures, newPatient} = this.props;
         this.setState({
-            invoiceId:"GPC:2020-21/0002",
-            invoiceDate: " 05 Jan 2020",
-            patientName: "Miss Manyata Chaurasia",
-            patientAge: "4.5yrs (Female)",
-            patientAddress: "Skyways Sereno, Lohegaon,Pune ",
-            procedureList: [
-                {
-                    "name": "Consultation",
-                    "price": "100"
-                }
-            ]
+            invoiceId:(newPatient && newPatient.ptInvoice)? "GPC:2020-21/"+newPatient.ptInvoice: "",
+            invoiceDate:(newPatient && newPatient.ptDate)? newPatient.ptDate: "",
+            patientName: (newPatient && newPatient.ptName)? newPatient.ptName: "",
+            patientAge: (newPatient && newPatient.ptAge)? newPatient.ptAge: "",
+            patientAddress:(newPatient && newPatient.ptAddress)? newPatient.ptAddress: "",
+            procedureList: newProcedures
         })
     }
 
