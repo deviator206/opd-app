@@ -2,7 +2,10 @@
   "name": "invoice-generator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://deviator206.github.io/gpc",
   "dependencies": {
+    "@progress/kendo-drawing": "^1.6.0",
+    "@progress/kendo-react-pdf": "^3.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",

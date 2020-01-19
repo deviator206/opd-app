@@ -33,8 +33,8 @@ function Home() {
               <Card.Text>
                 Generate OPD invoice based on some requierment
     </Card.Text>
-    <Link to="/invoice">Generate Invoice</Link>
-    
+              <Link to="/invoice">Generate Invoice</Link>
+
             </Card.Body>
           </Card>
         </Col>
@@ -45,7 +45,7 @@ function Home() {
               <Card.Text>
                 MRI to be sent like image
     </Card.Text>
-    <Link to="/mri">send MRI</Link>
+              <Link to="/mri">send MRI</Link>
             </Card.Body>
           </Card>
         </Col>
@@ -60,10 +60,11 @@ function Home() {
 
 
 export default function App() {
+  
   return (
-    <Router>
+    <Router basename="/gpc">
       <Container>
-       
+
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
