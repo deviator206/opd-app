@@ -15,13 +15,22 @@
 }
 
 
-.gp-logo{
+.gp-logo1{
   width: 100%;
   height:100px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
+
+.gp-logo{
+  width: 80%;
+    height: 61px;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position-x: 43%;
+
+}
 .paddingRow
 {
   margin-top: 10px

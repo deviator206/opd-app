@@ -22,8 +22,8 @@ export default class InvoiceGeneration extends React.Component {
     convertToPDF() {
         const { newPatient } = this.props;
         savePDF(this.PageRef.current, {
-            paperSize: 'Letter',
-            margin: 50,
+            scale:0.5,
+            margin:80,
             fileName: (newPatient && newPatient.ptInvoice) ? "GPC_2020_21_" + newPatient.ptInvoice + ".pdf" : "__invoice.pdf",
         })
     }
@@ -39,7 +39,6 @@ export default class InvoiceGeneration extends React.Component {
             procedureList: newProcedures
         })
     }
-
 
     getListOfProcedures() {
         const { procedureList = [] } = this.state
@@ -136,10 +135,10 @@ export default class InvoiceGeneration extends React.Component {
 
                     <Row>
                         <Col>
-                            <h5 style={{ textDecoration: "underline" }}> Patient Details </h5>
-                            <h6 >Name: {patientName}</h6>
-                            <h6 >Age: {patientAge}</h6>
-                            <h6 >Address: {patientAddress}</h6>
+                            <div style={{ textDecoration: "underline" }}> Patient Details </div>
+                            <div >Name: {patientName}</div>
+                            <div >Age: {patientAge}</div>
+                            <div>Address: {patientAddress}</div>
                         </Col>
                     </Row>
 
@@ -179,11 +178,12 @@ export default class InvoiceGeneration extends React.Component {
                         <Col xs={5}  >
 
                         </Col>
-                        <Col style={{ border: "1px solid black" }}>
+                        <Col >
 
                             <SignatureCanvas penColor='blue'
+                            style={{ border: "1px solid black" }}
                                 ref={(ref) => { sigCanvas = ref }}
-                                canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }} />
+                                canvasProps={{ width: 500, height: 50, className: 'sigCanvas' }} />
                             <div> Dr. Supriya Desai-Bamane</div>
                         </Col>
                     </Row>
