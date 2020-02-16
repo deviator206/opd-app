@@ -19,13 +19,24 @@ export default class InvoiceGeneration extends React.Component {
         this.convertToPDF = this.convertToPDF.bind(this);
     }
 
+    convertToPDF1() {
+        const { newPatient } = this.props;
+        savePDF(this.PageRef.current, {
+            paperSize: "A4",
+            margin: {
+                left:80
+            },
+            fileName: (newPatient && newPatient.ptInvoice) ? "GPC_2020_21_" + newPatient.ptInvoice + ".pdf" : "__invoice.pdf",
+        })
+    }
+
     convertToPDF() {
         const { newPatient } = this.props;
         savePDF(this.PageRef.current, {
             paperSize: "A4",
             scale:0.7,
             margin: {
-                left:20,
+                left:80,
                 right:20
             },
             fileName: (newPatient && newPatient.ptInvoice) ? "GPC_2020_21_" + newPatient.ptInvoice + ".pdf" : "__invoice.pdf",
@@ -117,7 +128,7 @@ export default class InvoiceGeneration extends React.Component {
                                 <tbody>
                                     <tr>
                                     <td>
-                                    Dr.Supriya Desai- Bamane <br/>
+                                    Dr.Supriya Desai-Bamane <br/>
                                     M.S.(Gen. Surgery) <br/>
                                     Mob # 9673764418
                                     </td>
@@ -187,7 +198,7 @@ export default class InvoiceGeneration extends React.Component {
                             <SignatureCanvas penColor='blue'
                             style={{ border: "1px solid black" }}
                                 ref={(ref) => { sigCanvas = ref }}
-                                canvasProps={{ width: 500, height: 50, className: 'sigCanvas' }} />
+                                canvasProps={{ width: 500, height: 250, className: 'sigCanvas' }} />
                             <div> Dr. Supriya Desai-Bamane</div>
                         </Col>
                     </Row>
