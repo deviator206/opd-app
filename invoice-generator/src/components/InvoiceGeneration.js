@@ -22,8 +22,12 @@ export default class InvoiceGeneration extends React.Component {
     convertToPDF() {
         const { newPatient } = this.props;
         savePDF(this.PageRef.current, {
-            scale:0.5,
-            margin:80,
+            paperSize: "A4",
+            scale:0.7,
+            margin: {
+                left:20,
+                right:20
+            },
             fileName: (newPatient && newPatient.ptInvoice) ? "GPC_2020_21_" + newPatient.ptInvoice + ".pdf" : "__invoice.pdf",
         })
     }
